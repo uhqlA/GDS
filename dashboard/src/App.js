@@ -1,11 +1,11 @@
+import React from "react";
+import Login from "./components/Registration/Registration";
 
-import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
-    <p>Dashboard</p>
-    </div>
+    <Login/>
   );
 }
 
