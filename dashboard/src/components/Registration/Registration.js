@@ -1,6 +1,7 @@
 import React from "react";
-import "./Registration.css"
+// import "./Registration.css"
 import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";
+
 
 
 
@@ -38,7 +39,7 @@ const Registration = () => {
                       
                     </div>
                     <div className="btn">
-                    <button className="submit">Login</button>
+                    <button className="submit">Register</button>
                     </div>
                     <div className="register-link">
                         <p>Already have an account? {" "}

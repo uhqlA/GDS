@@ -1,122 +1,124 @@
-
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: blue;
-}
-
-.wrapper{
+    background-image: url("../../../public/assets/gasreleased.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  
+  .wrapper {
     position: relative;
     width: 420px;
     height: 450px;
-    background:seagreen;
+    background-color: rgba(189, 91, 91, 0.5);
     border-radius: 10px;
-    color: white;
-}
-
-.wrapper .form-boxing{
+    border-style: solid ;
+    border-width: 1px;
+    color: #fff;
+    opacity: 0.9;
+  }
+  
+  .wrapper .form-boxing {
     width: 100%;
     padding: 40px;
-}
-
-form h1{
+  }
+  
+  form h1 {
     font-size: 36px;
     text-align: center;
-}
-
-form .input-box{
+  }
+  
+  form .input-box {
     position: relative;
     margin: 30px 30px;
-    /* background: salmon; */
-}
-
-.input-box input{
+  }
+  
+  .input-box input {
     width: 100%;
     height: 5vh;
     background: transparent;
     border: none;
     outline: none;
-    border: 2px solid rgba(255,255,255, .1);
+    border: 1px solid rgba(233, 219, 219, 0.9);
     border-radius: 40px;
     font-size: 16px;
-    color: white;
+    color: #fff;
     padding: 20px 45px 20px 20px;
-}
-
-.input-box input::placeholder{
-    color: white;
-}
-
-.input-box .icon{
+  }
+  
+  .input-box input::placeholder {
+    color: #fff;
+  }
+  
+  .input-box .icon {
     position: absolute;
     right: 20px;
     top: 50%;
     translate: 0 -50%;
     font-size: 16px;
-}
-
-form .remember-forgot{
+  }
+  
+  form .remember-forgot {
     display: flex;
     justify-content: space-between;
     font-size: 14.5px;
-    margin-right:-15px 0 15px ;
+    margin-right: -15px 0 15px;
     margin: 30px 30px;
-
-}
-.remember-forgot label input{
+  }
+  .remember-forgot label input {
     accent-color: #fff;
     margin-right: 4px;
-}
-
-.remember-forgot a {
+  }
+  
+  .remember-forgot a {
     color: #fff;
     text-decoration: none;
-}
-
-.remember-forgot a:hover {
+  }
+  
+  .remember-forgot a:hover {
     text-decoration: underline;
-}
-
-form button{
+  }
+  
+  form button {
     width: 70%;
     height: 45px;
-    background: #fff;
+    background: #006400;
     border: none;
     outline: none;
     border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0,0,0, .1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-  font-size: 16px;
-  color: #333;
-  position: relative;
-  font-weight: 700;
-    
-}
-
-.btn{
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    font-weight: 700;
+  }
+  
+  .btn {
     margin: 0;
     position: absolute;
-     left: 60%;
+    left: 60%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 70%;
-}
-
-form .register-link{
+  }
+  
+  form .register-link {
     font-size: 14.5px;
     text-align: center;
     margin: 20px 0 15px;
     padding-top: 40px;
-}
-
-.register-link p a {
+  }
+  
+  .register-link p a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-}
-
-.register-link p a:hover{
+  }
+  
+  .register-link p a:hover {
     text-decoration: underline;
-}
+  }
+  

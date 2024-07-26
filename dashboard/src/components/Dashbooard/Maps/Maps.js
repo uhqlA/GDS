@@ -38,7 +38,7 @@ const Maps =() =>{
     
         const container = document.getElementById('popup');
         const content = document.getElementById('popup-content');
-        const closer = document.getElementById('popup-closer');
+        // const closer = document.getElementById('popup-closer');
         const overlay = new Overlay({
           element: container,
           autoPan: {
@@ -75,7 +75,7 @@ const Maps =() =>{
         <div>
           <div id="markerpopupmap" style={{ width: "100%", height: "400px" }} />
           <div id="popup" class="ol-popup" style={{backgroundColor:'#fff'}}>
-            <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+            {/* <a href="#" id="popup-closer" class="ol-popup-closer"></a> */}
           <div id="popup-content"></div>
         </div>
         </div>
