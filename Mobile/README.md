@@ -1,50 +1,37 @@
-# Welcome to your Expo app 👋
+# Auth0 Example
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<p>
+  <!-- iOS -->
+  <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
+  <!-- Android -->
+  <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
+  <!-- Web -->
+  <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
+</p>
 
-## Get started
+## 🚀 How to use
 
-1. Install dependencies
+- Install with `yarn` or `npm install`.
+- Create your own app on [Auth0](https://auth0.com).
+- Add the `AuthSession` auth URL to `Allowed Callback URLs` on Auth0.
+- Open `App.js` and replace `auth0ClientId` and `auth0Domain` with your app settings.
+- Run `yarn start` or `npm run start` to try it out.
 
-   ```bash
-   npm install
-   ```
+#### AuthSession callback URL
 
-2. Start the app
+The AuthSession helps you with browser authentication, without the need of an additional server or website. To use this with Auth0 authentication flows, we need to tell Auth0 that the callback URLs are allowed.
 
-   ```bash
-    npx expo start
-   ```
+Each Expo user has it's own URL for different projects, the basic structure of this URL is `https://auth.expo.io/@your-username/your-expo-app-slug`. If you are signed in as `awesome-ppl`, and your app is called `meme-explorer`, your URL looks like `https://auth.expo.io/@awesome-ppl/meme-explorer`.
 
-In the output, you'll find options to open the app in a
+> [Read more about AuthSession here](https://docs.expo.dev/versions/latest/sdk/auth-session/)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+#### Auth0 app settings
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Both the `auth0ClientId` and `auth0Domain` needs to match your Auth0 app settings.
 
-## Get a fresh project
+![Application Settings](https://i.imgur.com/Io9I4qg.jpg)
 
-When you're ready, run:
+## 📝 Notes
 
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- [Expo AuthSession docs](https://docs.expo.dev/versions/latest/sdk/auth-session/)
+- [Auth0 React/SPA quickstart guide](https://auth0.com/docs/quickstart/spa/react)
