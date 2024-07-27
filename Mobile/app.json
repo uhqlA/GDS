@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "name": "Scylla",
+    "slug": "Scylla",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ]
+  }
+}
