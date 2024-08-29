@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import {View, Text, TextInput, StyleSheet, ScrollView} from 'react-native';
 import Constants from "../../components/constants/Constants";
 import DropdownComponent from "../../components/DropDown/DropdownComponent";
+import RadioButtonProject from "../../components/DropDown/RadioButton";
 
 const Fields = () => {
     const [text, setText] = useState('');
@@ -73,7 +74,8 @@ const Fields = () => {
                     />
                 </View>
             </View>
-
+            <Text style={styles.label}>Project Phase Status (e.g. Completed)  </Text>
+            <RadioButtonProject/>
         </View>
         </ScrollView>
     );

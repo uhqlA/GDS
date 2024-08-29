@@ -1,11 +1,20 @@
 import React from "react";
-import {View, StyleSheet, Text, SafeAreaView, ScrollView, ActivityIndicator, TextInput} from "react-native";
+import {
+    View,
+    StyleSheet,
+    Text,
+    SafeAreaView,
+    ScrollView,
+    ActivityIndicator,
+    TextInput,
+    TouchableOpacity
+} from "react-native";
 import Geocode from "../Maps/Geocode";
 import Constants from "../../components/constants/Constants";
-
 import Fields from "./Fields";
+
+
 const Phase0ne = () => {
-    // const [value, setValue] = React.useState(null);
     const [location, setLocation] = React.useState(null);
     const [loading, setLoading] = React.useState(false);
     return (
@@ -49,9 +58,12 @@ const Phase0ne = () => {
 
                     </View>
 
-
                         <Fields/>
+                        <TouchableOpacity>
+                            <Text style={styles.button}>Submit</Text>
+                        </TouchableOpacity>
                    </View>
+
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -70,8 +82,6 @@ const styles = StyleSheet.create({
     },
     cardPhase:{
         backgroundColor:Constants.AppColor.grey,
-        // padding:15,
-        // margin:5,
         borderRadius:10,
         borderWidth:2,
         paddingVertical:10
@@ -98,8 +108,16 @@ const styles = StyleSheet.create({
         margin: 12,
         borderWidth: 1,
         padding: 10,
-
     },
-
-
+    button:{
+        textAlign:"center",
+        fontSize: 30,
+        fontWeight:"bold",
+        backgroundColor:Constants.AppColor.green,
+        color:Constants.AppColor.white,
+        padding: 10,
+        marginHorizontal: 60,
+        borderRadius:10,
+        borderWidth: 1,
+    }
 })
