@@ -1,9 +1,9 @@
 import React from "react";
-import { View, StyleSheet, Text, SafeAreaView, ScrollView, ActivityIndicator } from "react-native";
+import {View, StyleSheet, Text, SafeAreaView, ScrollView, ActivityIndicator, TextInput} from "react-native";
 import Geocode from "../Maps/Geocode";
 import Constants from "../../components/constants/Constants";
 
-
+import Fields from "./Fields";
 const Phase0ne = () => {
     // const [value, setValue] = React.useState(null);
     const [location, setLocation] = React.useState(null);
@@ -46,7 +46,11 @@ const Phase0ne = () => {
                                 loading={loading}
                             />
                         </View>
+
                     </View>
+
+
+                        <Fields/>
                    </View>
                 </View>
             </ScrollView>
@@ -65,9 +69,14 @@ const styles = StyleSheet.create({
         paddingRight: 30
     },
     cardPhase:{
-        backgroundColor:Constants.AppColor.green,
-        padding:10,margin:5,
-    },   header: {
+        backgroundColor:Constants.AppColor.grey,
+        // padding:15,
+        // margin:5,
+        borderRadius:10,
+        borderWidth:2,
+        paddingVertical:10
+    },
+    header: {
         alignItems: "center",
     },
     textLabelCoord: {
@@ -84,5 +93,13 @@ const styles = StyleSheet.create({
         textAlign: "center",
         color: Constants.AppColor.backgroundColor,
     },
+    input: {
+        height: 30,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
+
+    },
+
 
 })
