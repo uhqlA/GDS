@@ -10,6 +10,7 @@ import { MaterialCommunityIcons  } from '@expo/vector-icons';
 import constants from "../../components/constants/Constants";
 
 
+
 const Geocode = ({setLocation,setLoading,loading}) => {
     const [granted, setGranted] = useState(false);
 
@@ -28,7 +29,7 @@ const Geocode = ({setLocation,setLoading,loading}) => {
             longitude: currentLocation.coords.longitude,
             altitude: currentLocation.coords.altitude,
         };
-        console.log(`latitude ${JSON.stringify(locationObject)}`);
+        // console.log(`latitude ${JSON.stringify(locationObject)}`);
         setLocation(locationObject);
         setLoading(false)
     };
@@ -55,7 +56,7 @@ const Geocode = ({setLocation,setLoading,loading}) => {
 
 const styles = StyleSheet.create({
     appButtonContainer: {
-        backgroundColor: "#F1884D",
+        backgroundColor: constants.AppColor.backgroundColor,
         borderRadius: 10,
         paddingVertical: 10,
         paddingHorizontal: 35,
