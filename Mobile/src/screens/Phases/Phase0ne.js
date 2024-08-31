@@ -13,7 +13,6 @@ import Geocode from "../Maps/Geocode";
 import Constants from "../../components/constants/Constants";
 import Fields from "./Fields";
 
-
 const Phase0ne = () => {
     const [location, setLocation] = React.useState(null);
     const [loading, setLoading] = React.useState(false);
@@ -21,48 +20,44 @@ const Phase0ne = () => {
         <SafeAreaView>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
-                    <Text style={styles.textPhase}>
-                        General Information
-                    </Text>
                     <View style={styles.cardPhase}>
-                    <View style={styles.header}>
-                        <View
-                            style={{
-                                backgroundColor: "#F0F1F6",
-                                alignItems: "center",
-                                height: 120,
-                                width: 296,
-                                paddingBottom: 10,
-                                borderWidth: .5,
-                                borderColor: "black",
-                                borderRadius: 10,
-                            }}
-                        >
-                            {loading && <ActivityIndicator />}
-                            {location != null && !loading ? (
-                                <Text style={styles.textLabelCoord}>
-                                    {" "}
-                                    {location.longitude}, {location.latitude}
-                                </Text>
-                            ) : (
-                                <Text style={styles.textLabelCoord}>
-                                    Press button to get location
-                                </Text>
-                            )}
-                            <Geocode
-                                setLocation={setLocation}
-                                setLoading={setLoading}
-                                loading={loading}
-                            />
+                        <View style={styles.header}>
+                            <View
+                                style={{
+                                    backgroundColor: "#F0F1F6",
+                                    alignItems: "center",
+                                    height: 120,
+                                    width: 296,
+                                    paddingBottom: 10,
+                                    borderWidth: .5,
+                                    borderColor: "black",
+                                    borderRadius: 10,
+                                }}
+                            >
+                                {loading && <ActivityIndicator/>}
+                                {location != null && !loading ? (
+                                    <Text style={styles.textLabelCoord}>
+                                        {" "}
+                                        {location.longitude}, {location.latitude}
+                                    </Text>
+                                ) : (
+                                    <Text style={styles.textLabelCoord}>
+                                        Press button to get location
+                                    </Text>
+                                )}
+                                <Geocode
+                                    setLocation={setLocation}
+                                    setLoading={setLoading}
+                                    loading={loading}
+                                />
+                            </View>
+
                         </View>
-
-                    </View>
-
                         <Fields/>
                         <TouchableOpacity>
                             <Text style={styles.button}>Submit</Text>
                         </TouchableOpacity>
-                   </View>
+                    </View>
 
                 </View>
             </ScrollView>
@@ -76,15 +71,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingBottom: 70,
-        paddingTop: 65,
+        paddingTop: 5,
         paddingLeft: 30,
         paddingRight: 30
     },
-    cardPhase:{
-        backgroundColor:Constants.AppColor.grey,
-        borderRadius:10,
-        borderWidth:2,
-        paddingVertical:10
+    cardPhase: {
+        backgroundColor: Constants.AppColor.grey,
+        borderRadius: 10,
+        borderWidth: 2,
+        paddingVertical: 10
     },
     header: {
         alignItems: "center",
@@ -96,7 +91,7 @@ const styles = StyleSheet.create({
         color: "#483D8B",
         fontWeight: "bold",
     },
-    textPhase:{
+    textPhase: {
         fontSize: 25,
         fontWeight: "bold",
         paddingVertical: 10,
@@ -109,15 +104,15 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 10,
     },
-    button:{
-        textAlign:"center",
+    button: {
+        textAlign: "center",
         fontSize: 30,
-        fontWeight:"bold",
-        backgroundColor:Constants.AppColor.green,
-        color:Constants.AppColor.white,
+        fontWeight: "bold",
+        backgroundColor: Constants.AppColor.green,
+        color: Constants.AppColor.white,
         padding: 10,
         marginHorizontal: 60,
-        borderRadius:10,
+        borderRadius: 10,
         borderWidth: 1,
     }
 })

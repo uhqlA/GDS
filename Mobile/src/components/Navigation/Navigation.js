@@ -8,6 +8,7 @@ import constants from "../constants/Constants";
 import Onboarding from "../../screens/OnboardingScreen/Onboarding";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Phase0ne from "../../screens/Phases/Phase0ne";
+import PhaseTwo from "../../screens/Phases/PhaseTwo";
 
 const Stack = createNativeStackNavigator()
 
@@ -30,13 +31,15 @@ export default function App() {
                     component={Phase0ne}
                     options={{
                         headerShown: true,
+                        title:"General Information",
                     }}
                 />
                 <Stack.Screen
                     name="PhaseTwo"
-                    component={Onboarding}
+                    component={PhaseTwo}
                     options={{
                         headerShown: true,
+                        title: "Concrete Faced Rock Filled Dam"
                     }}
                 />
 
@@ -53,14 +56,16 @@ export default function App() {
                 marginLeft: 10,
                 fontSize: 15
             },
-            headerTintColor: constants.AppColor.white,
+            headerTintColor: constants.AppColor.backgroundColor,
             drawerStyle: {
-                // backgroundColor: constants.AppColor.backgroundColor,
+                backgroundColor: constants.AppColor.green,
                 width: 250,
 
             }
         }}>
-            <Drawer.Screen name="HomePage" component={Home}/>
+            <Drawer.Screen name="HomePage" component={Home} options={{
+                title:"Home"
+            }}/>
             <Drawer.Screen name="Notifications" component={Login}/>
             <Drawer.Screen name="Notification" component={Onboarding}/>
         </Drawer.Navigator>;

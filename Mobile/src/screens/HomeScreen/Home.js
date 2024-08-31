@@ -1,7 +1,10 @@
-import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native'
+import {View, Text, StyleSheet, TouchableOpacity, ScrollView, Image} from 'react-native'
 import React from 'react'
 import Constants from '../../components/constants/Constants'
 import {Icon} from '@rneui/themed';
+import { LinearGradient } from 'expo-linear-gradient';
+import Logo from '../../../assets/logo.png';
+
 
 
 const Home = ({navigation}) => {
@@ -38,12 +41,27 @@ const Home = ({navigation}) => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.headerHome}>
+            <LinearGradient
+                colors={['#000000', '#006600','#BB0000', '#006600']}
+                style={styles.headerHome}>
                 <Text style={styles.titleHome}>Infrastructure Data Collection Tool</Text>
-            </View>
+            </LinearGradient>
             <View>
+                <Image source={Logo}
+                style={styles.logo}/>
             </View>
             <PhaseCards/>
+            <View style={styles.infoDown}>
+                <Text style={{
+                    paddingLeft: 15,
+                    fontSize: 18,
+                    fontWeight:"500",
+                    color:Constants.AppColor.backgroundColor
+                }}>Project Status:</Text>
+            </View>
+            <View>
+
+            </View>
         </View>
     )
 }
@@ -55,7 +73,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     headerHome: {
-        backgroundColor: Constants.AppColor.green,
+        backgroundColor: Constants.AppColor.blue,
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
         flex: 0.25,
@@ -68,13 +86,19 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         paddingBottom: 40,
     },
+    logo:{
+        height:80,
+        width:80,
+        bottom:120,
+        borderRadius: 50,
+        marginLeft:280,
+    },
     cardHome: {
         backgroundColor: Constants.AppColor.white,
         padding: 1,
         margin: 20,
         marginVertical: 40,
         borderRadius: 15,
-
     },
     iconsHome: {
         justifyContent: 'space-between',
@@ -83,12 +107,12 @@ const styles = StyleSheet.create({
 
     },
     iconInfo: {
-        width: 50, // Width of the circle
-        height: 50, // Height of the circle
-        borderRadius: 50, // Half of width and height to make it circular
+        width: 50,
+        height: 50,
+        borderRadius: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        shadowColor: '#000',
+        shadowColor: Constants.AppColor.black,
         shadowOffset: {width: 0, height: 2},
         shadowOpacity: 0.3,
         shadowRadius: 2,
@@ -110,7 +134,7 @@ const styles = StyleSheet.create({
     phaseContainer: {
         position: 'absolute',
         borderRadius: 10,
-        shadowColor: '#000',
+        shadowColor: Constants.AppColor.black,
         shadowOffset: {width: 0, height: 2},
         shadowOpacity: 0.15,
         shadowRadius: 2,
@@ -122,8 +146,10 @@ const styles = StyleSheet.create({
         left: 10,
         right: 10,
         padding: 5,
-
-    }
+    },
+    infoDown:{
+        top:100,
+    },
 
 
 })
