@@ -1,62 +1,51 @@
-import {View, Text, StyleSheet, TouchableOpacity,ScrollView} from 'react-native'
+import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native'
 import React from 'react'
 import Constants from '../../components/constants/Constants'
-import Fontisto from '@expo/vector-icons/Fontisto'
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import Entypo from '@expo/vector-icons/Entypo';
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import {Icon} from '@rneui/themed';
 
 
 const Home = ({navigation}) => {
-  return (
-    <ScrollView style={styles.container}>
-        <Text style={styles.titleHome}>Infrastructure Data Collection Tool</Text>
-        <View style={styles.cardHome}>
-            <View style={styles.iconsHome}>
-                <View style={styles.iconInfo}>
-                    <TouchableOpacity>
-                        <FontAwesome name="map-marker" size={30} color="green"  style={styles.icon} />
-                        <Text style={styles.textHome}>General information</Text>
-                    </TouchableOpacity>
+    const onPressingG=()=>navigation.navigate('PhaseOne')
+    const onPressingPhaseOne=()=>navigation.navigate('PhaseTwo')
+    const PhaseCards = () => {
+        const CircularCard = ({iconName, titleHeader, iconType, color,backgroundColor="#fef9e7",onPress=null}) => (
+            <View style={{
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'flex-start'
+            }}>
+                <TouchableOpacity style={[styles.iconInfo,{backgroundColor}]} onPress={onPress}>
+                    <Icon name={iconName} type={iconType} size={20} color={color} style={styles.icon}/>
+                </TouchableOpacity>
+                <Text style={styles.textHome}>{titleHeader}</Text>
+            </View>
+        )
+        return (
+            <View style={styles.phaseContainer}>
+                <View style={styles.iconsHome}>
+                    <CircularCard iconName="map-marker" size={20} color="green" iconType="font-awesome" titleHeader="General Information" onPress={onPressingG}/>
+                    <CircularCard iconName="water" size={20} color="#000" iconType="entypo" titleHeader="Phase One" backgroundColor="#d5d8dc" onPress={onPressingPhaseOne}/>
+                    <CircularCard iconName="hydro-power" size={20} color="#000" iconType="material-community" titleHeader="Phase Two" backgroundColor="#fbeee6"/>
                 </View>
-                <View style={styles.iconInfo}>
-                    <TouchableOpacity>
-                        <Entypo name="water" size={30} color="blue"  style={styles.icon} />
-                        <Text style={styles.textHome}>Phase One</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.iconInfo}>
-                    <TouchableOpacity>
-                        <MaterialCommunityIcons name="hydro-power" size={30} color="black"  style={styles.icon} />
-                        <Text style={styles.textHome}>Phase Two</Text>
-                    </TouchableOpacity>
+                <View style={styles.iconsHomeDown}>
+                    <CircularCard iconName="pipe-valve" size={20} color="#000" iconType="material-community" titleHeader="Phase Three" backgroundColor="#e1fdce"/>
+                    <CircularCard iconName="world-o" size={20} color="#000" iconType="fontisto" titleHeader="Phase Four" backgroundColor="#f2f4f4"/>
+                    <CircularCard iconName="world-o" size={20} color="#000" iconType="fontisto" titleHeader="Phase Five"/>
                 </View>
             </View>
-            <View style={styles.iconsHomeDown}>
-                <View style={styles.iconInfo}>
-                    <TouchableOpacity>
-                        <MaterialCommunityIcons name="pipe-valve" size={30} color="black"  style={styles.icon} />
-                        <Text style={styles.textHome}>Phase Four</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.iconInfo}>
-                    <TouchableOpacity>
-                        <Fontisto name="world-o" size={30} color="black" style={styles.icon} />
-                        <Text style={styles.textHome}>Phase One</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.iconInfo}>
-                    <TouchableOpacity>
-                        <Fontisto name="world-o" size={30} color="black" style={styles.icon} />
-                        <Text style={styles.textHome}>Phase Two</Text>
-                    </TouchableOpacity>
-                </View>
+        )
+    }
+
+    return (
+        <View style={styles.container}>
+            <View style={styles.headerHome}>
+                <Text style={styles.titleHome}>Infrastructure Data Collection Tool</Text>
             </View>
+            <View>
+            </View>
+            <PhaseCards/>
         </View>
-
-
-    </ScrollView>
-  )
+    )
 }
 
 export default Home;
@@ -64,57 +53,77 @@ export default Home;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // backgroundColor: Constants.AppColor.grey,
+    },
+    headerHome: {
+        backgroundColor: Constants.AppColor.green,
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20,
+        flex: 0.25,
     },
     titleHome: {
-        textAlign: "center",
-        fontSize:25,
+        padding: 20,
+        fontSize: 16,
         fontWeight: "bold",
-        color: Constants.AppColor.backgroundColor,
-        paddingTop:40,
-        paddingBottom:40,
+        color: Constants.AppColor.white,
+        paddingTop: 20,
+        paddingBottom: 40,
     },
-    cardHome:{
-        backgroundColor:Constants.AppColor.white,
-        padding:10,
-        margin:20,
+    cardHome: {
+        backgroundColor: Constants.AppColor.white,
+        padding: 1,
+        margin: 20,
         marginVertical: 40,
-        borderRadius:15,
+        borderRadius: 15,
 
     },
-    iconsHome:{
-        justifyContent:'space-between',
-        flexDirection:'row',
-        paddingVertical:10,
-        paddingHorizontal:10,
+    iconsHome: {
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        padding: 10
 
     },
-    iconInfo:{
-      borderWidth:0.5,
-        borderColor:Constants.AppColor.black,
-        height:80,
-        width:90,
-        backgroundColor:"aliceblue",
-       padding:4,
-        borderRadius:10
+    iconInfo: {
+        width: 50, // Width of the circle
+        height: 50, // Height of the circle
+        borderRadius: 50, // Half of width and height to make it circular
+        justifyContent: 'center',
+        alignItems: 'center',
+        shadowColor: '#000',
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.3,
+        shadowRadius: 2,
+        elevation: 2,
     },
-    iconsHomeDown:{
-        justifyContent:'space-between',
-        flexDirection:'row',
-        paddingVertical:15,
-        paddingHorizontal:10,
+    iconsHomeDown: {
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        paddingVertical: 15,
+        paddingHorizontal: 10,
     },
-    icon:{
-
+    icon: {
         textAlign: "center"
     },
-    textHome:{
-        color:Constants.AppColor.backgroundColor,
-        fontSize:18,
-        paddingVertical:2,
-        fontWeight:400,
-        textAlign:"center"
+    textHome: {
+        color: Constants.AppColor.backgroundColor,
+        textAlign: "center"
     },
+    phaseContainer: {
+        position: 'absolute',
+        borderRadius: 10,
+        shadowColor: '#000',
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.15,
+        shadowRadius: 2,
+        elevation: 2,
+        minHeight: 100,
+        top: 120,
+        margin: 10,
+        backgroundColor: Constants.AppColor.white,
+        left: 10,
+        right: 10,
+        padding: 5,
+
+    }
 
 
 })
