@@ -59,9 +59,11 @@ const Home = ({navigation}) => {
                     color:Constants.AppColor.backgroundColor
                 }}>Project Status:</Text>
                 <Status/>
-            </View>
-            <View>
-
+                <View>
+                    <Text>
+                        View Projects
+                    </Text>
+                </View>
             </View>
         </View>
     )

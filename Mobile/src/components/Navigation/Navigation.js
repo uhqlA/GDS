@@ -1,37 +1,35 @@
 import * as React from 'react';
-import { Button, View,StyleSheet } from 'react-native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
+import {Button, View, StyleSheet} from 'react-native';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import {NavigationContainer} from '@react-navigation/native';
 import Home from "../../screens/HomeScreen/Home";
 import Login from "../../screens/LoginScreen/Login";
 import constants from "../constants/Constants";
 import Onboarding from "../../screens/OnboardingScreen/Onboarding";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import GeneralInformation from "../../screens/Phases/GeneralInformation";
 import PhaseTwo from "../../screens/Phases/PhaseTwo";
 
 const Stack = createNativeStackNavigator()
-
 const Drawer = createDrawerNavigator();
-
 
 
 export default function App() {
     const HomeStack = () => {
-        return(
+        return (
             <Stack.Navigator initialRouteName="Home">
                 <Stack.Screen
-                name="Home"
-                component={DrawerNavigator}
-                options={{
-                    headerShown: false,
-                }} />
+                    name="Home"
+                    component={DrawerNavigator}
+                    options={{
+                        headerShown: false,
+                    }}/>
                 <Stack.Screen
                     name="PhaseOne"
                     component={GeneralInformation}
                     options={{
                         headerShown: true,
-                        title:"General Information",
+                        title: "General Information",
                     }}
                 />
                 <Stack.Screen
@@ -58,13 +56,12 @@ export default function App() {
             },
             headerTintColor: constants.AppColor.backgroundColor,
             drawerStyle: {
-                backgroundColor: constants.AppColor.green,
+                backgroundColor: constants.AppColor.white,
                 width: 250,
-
             }
         }}>
             <Drawer.Screen name="HomePage" component={Home} options={{
-                title:"Home"
+                title: "Home"
             }}/>
             <Drawer.Screen name="Notifications" component={Login}/>
             <Drawer.Screen name="Notification" component={Onboarding}/>
@@ -73,15 +70,15 @@ export default function App() {
 
     return (
         <NavigationContainer>
-        <HomeStack/>
+            <HomeStack/>
         </NavigationContainer>
     );
 }
 const styles = StyleSheet.create({
-    container:{
-        // backgroundColor:constants.AppColor.backgroundColor
+    container: {
+        backgroundColor: constants.AppColor.backgroundColor
     },
-    headerStyle:{
+    headerStyle: {
         backgroundColor: constants.AppColor.green,
 
     }
