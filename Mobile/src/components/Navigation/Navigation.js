@@ -7,7 +7,7 @@ import Login from "../../screens/LoginScreen/Login";
 import constants from "../constants/Constants";
 import Onboarding from "../../screens/OnboardingScreen/Onboarding";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Phase0ne from "../../screens/Phases/Phase0ne";
+import GeneralInformation from "../../screens/Phases/GeneralInformation";
 import PhaseTwo from "../../screens/Phases/PhaseTwo";
 
 const Stack = createNativeStackNavigator()
@@ -28,7 +28,7 @@ export default function App() {
                 }} />
                 <Stack.Screen
                     name="PhaseOne"
-                    component={Phase0ne}
+                    component={GeneralInformation}
                     options={{
                         headerShown: true,
                         title:"General Information",

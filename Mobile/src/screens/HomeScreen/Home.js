@@ -4,6 +4,7 @@ import Constants from '../../components/constants/Constants'
 import {Icon} from '@rneui/themed';
 import { LinearGradient } from 'expo-linear-gradient';
 import Logo from '../../../assets/logo.png';
+import Status from "../Phases/Status";
 
 
 
@@ -38,11 +39,10 @@ const Home = ({navigation}) => {
             </View>
         )
     }
-
     return (
         <View style={styles.container}>
             <LinearGradient
-                colors={['#000000', '#006600','#BB0000', '#006600']}
+                colors={['#05B050', '#05B050','#5d5c8c', '#5d5c8c']}
                 style={styles.headerHome}>
                 <Text style={styles.titleHome}>Infrastructure Data Collection Tool</Text>
             </LinearGradient>
@@ -58,6 +58,7 @@ const Home = ({navigation}) => {
                     fontWeight:"500",
                     color:Constants.AppColor.backgroundColor
                 }}>Project Status:</Text>
+                <Status/>
             </View>
             <View>
 
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
         backgroundColor: Constants.AppColor.blue,
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
-        flex: 0.25,
+        flex: 0.32,
     },
     titleHome: {
         padding: 20,

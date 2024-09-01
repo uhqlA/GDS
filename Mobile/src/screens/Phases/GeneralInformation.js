@@ -13,7 +13,7 @@ import Geocode from "../Maps/Geocode";
 import Constants from "../../components/constants/Constants";
 import Fields from "./Fields";
 
-const Phase0ne = () => {
+const GeneralInformation = () => {
     const [location, setLocation] = React.useState(null);
     const [loading, setLoading] = React.useState(false);
     return (
@@ -65,7 +65,7 @@ const Phase0ne = () => {
     )
 }
 
-export default Phase0ne;
+export default GeneralInformation;
 
 const styles = StyleSheet.create({
     container: {
