@@ -46,21 +46,30 @@ const Home = ({navigation}) => {
                 style={styles.headerHome}>
                 <Text style={styles.titleHome}>Infrastructure Data Collection Tool</Text>
             </LinearGradient>
-            <View>
-                <Image source={Logo}
-                style={styles.logo}/>
-            </View>
+            {/*<View>*/}
+            {/*    <Image source={Logo}*/}
+            {/*    style={styles.logo}/>*/}
+            {/*</View>*/}
             <PhaseCards/>
             <View style={styles.infoDown}>
-                <Text style={{
+                <Text
+                    style={{
                     paddingLeft: 15,
                     fontSize: 18,
                     fontWeight:"500",
+                    borderBottomWidth: 2,
                     color:Constants.AppColor.backgroundColor
-                }}>Project Status:</Text>
+                }}
+                >Project Status:</Text>
                 <Status/>
                 <View>
-                    <Text>
+                    <Text style={{
+                        paddingLeft: 15,
+                        fontSize: 18,
+                        fontWeight:"500",
+                        borderBottomWidth: 2,
+                        color:Constants.AppColor.backgroundColor
+                    }}>
                         View Projects
                     </Text>
                 </View>
@@ -89,13 +98,13 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         paddingBottom: 40,
     },
-    logo:{
-        height:80,
-        width:80,
-        bottom:120,
-        borderRadius: 50,
-        marginLeft:280,
-    },
+    // logo:{
+    //     height:70,
+    //     width:70,
+    //     bottom:130,
+    //     borderRadius: 50,
+    //     marginLeft:280,
+    // },
     cardHome: {
         backgroundColor: Constants.AppColor.white,
         padding: 1,
@@ -143,7 +152,7 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
         elevation: 2,
         minHeight: 100,
-        top: 120,
+        top: 90,
         margin: 10,
         backgroundColor: Constants.AppColor.white,
         left: 10,
@@ -151,7 +160,8 @@ const styles = StyleSheet.create({
         padding: 5,
     },
     infoDown:{
-        top:100,
+        top:118,
+
     },
 
 
