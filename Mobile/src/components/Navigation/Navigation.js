@@ -7,8 +7,9 @@ import Login from "../../screens/LoginScreen/Login";
 import constants from "../constants/Constants";
 import Onboarding from "../../screens/OnboardingScreen/Onboarding";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import GeneralInformation from "../../screens/Phases/GeneralInformation";
-import PhaseTwo from "../../screens/Phases/PhaseTwo";
+import GeneralInformation from "../../screens/Phases/GeneralInformation/GeneralInformation";
+import PhaseOne from "../../screens/Phases/PhaseOne/PhaseOne";
+
 
 const Stack = createNativeStackNavigator()
 const Drawer = createDrawerNavigator();
@@ -25,7 +26,7 @@ export default function App() {
                         headerShown: false,
                     }}/>
                 <Stack.Screen
-                    name="PhaseOne"
+                    name="GeneralInformation"
                     component={GeneralInformation}
                     options={{
                         headerShown: true,
@@ -33,8 +34,8 @@ export default function App() {
                     }}
                 />
                 <Stack.Screen
-                    name="PhaseTwo"
-                    component={PhaseTwo}
+                    name="PhaseOne"
+                    component={PhaseOne}
                     options={{
                         headerShown: true,
                         title: "Concrete Faced Rock Filled Dam"

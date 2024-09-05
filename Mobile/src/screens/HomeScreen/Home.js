@@ -2,23 +2,28 @@ import {View, Text, StyleSheet, TouchableOpacity, ScrollView, Image} from 'react
 import React from 'react'
 import Constants from '../../components/constants/Constants'
 import {Icon} from '@rneui/themed';
-import { LinearGradient } from 'expo-linear-gradient';
-import Logo from '../../../assets/logo.png';
+import {LinearGradient} from 'expo-linear-gradient';
 import Status from "../Phases/Status";
 
 
-
 const Home = ({navigation}) => {
-    const onPressingG=()=>navigation.navigate('PhaseOne')
-    const onPressingPhaseOne=()=>navigation.navigate('PhaseTwo')
+    const onPressingG = () => navigation.navigate('GeneralInformation')
+    const onPressingPhaseOne = () => navigation.navigate('PhaseOne')
     const PhaseCards = () => {
-        const CircularCard = ({iconName, titleHeader, iconType, color,backgroundColor="#fef9e7",onPress=null}) => (
+        const CircularCard = ({
+                                  iconName,
+                                  titleHeader,
+                                  iconType,
+                                  color,
+                                  backgroundColor = "#fef9e7",
+                                  onPress = null
+                              }) => (
             <View style={{
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'flex-start'
             }}>
-                <TouchableOpacity style={[styles.iconInfo,{backgroundColor}]} onPress={onPress}>
+                <TouchableOpacity style={[styles.iconInfo, {backgroundColor}]} onPress={onPress}>
                     <Icon name={iconName} type={iconType} size={20} color={color} style={styles.icon}/>
                 </TouchableOpacity>
                 <Text style={styles.textHome}>{titleHeader}</Text>
@@ -27,14 +32,20 @@ const Home = ({navigation}) => {
         return (
             <View style={styles.phaseContainer}>
                 <View style={styles.iconsHome}>
-                    <CircularCard iconName="map-marker" size={20} color="green" iconType="font-awesome" titleHeader="General Information" onPress={onPressingG}/>
-                    <CircularCard iconName="water" size={20} color="#000" iconType="entypo" titleHeader="Phase One" backgroundColor="#d5d8dc" onPress={onPressingPhaseOne}/>
-                    <CircularCard iconName="hydro-power" size={20} color="#000" iconType="material-community" titleHeader="Phase Two" backgroundColor="#fbeee6"/>
+                    <CircularCard iconName="map-marker" size={20} color="green" iconType="font-awesome"
+                                  titleHeader="General Information" onPress={onPressingG}/>
+                    <CircularCard iconName="water" size={20} color="#000" iconType="entypo" titleHeader="Phase One"
+                                  backgroundColor="#d5d8dc" onPress={onPressingPhaseOne}/>
+                    <CircularCard iconName="hydro-power" size={20} color="#000" iconType="material-community"
+                                  titleHeader="Phase Two" backgroundColor="#fbeee6"/>
                 </View>
                 <View style={styles.iconsHomeDown}>
-                    <CircularCard iconName="pipe-valve" size={20} color="#000" iconType="material-community" titleHeader="Phase Three" backgroundColor="#e1fdce"/>
-                    <CircularCard iconName="world-o" size={20} color="#000" iconType="fontisto" titleHeader="Phase Four" backgroundColor="#f2f4f4"/>
-                    <CircularCard iconName="world-o" size={20} color="#000" iconType="fontisto" titleHeader="Phase Five"/>
+                    <CircularCard iconName="pipe-valve" size={20} color="#000" iconType="material-community"
+                                  titleHeader="Phase Three" backgroundColor="#e1fdce"/>
+                    <CircularCard iconName="world-o" size={20} color="#000" iconType="fontisto" titleHeader="Phase Four"
+                                  backgroundColor="#f2f4f4"/>
+                    <CircularCard iconName="world-o" size={20} color="#000" iconType="fontisto"
+                                  titleHeader="Phase Five"/>
                 </View>
             </View>
         )
@@ -42,7 +53,7 @@ const Home = ({navigation}) => {
     return (
         <View style={styles.container}>
             <LinearGradient
-                colors={['#05B050', '#05B050','#5d5c8c', '#5d5c8c']}
+                colors={['#05B050', '#05B050', '#5d5c8c', '#5d5c8c']}
                 style={styles.headerHome}>
                 <Text style={styles.titleHome}>Infrastructure Data Collection Tool</Text>
             </LinearGradient>
@@ -54,21 +65,19 @@ const Home = ({navigation}) => {
             <View style={styles.infoDown}>
                 <Text
                     style={{
-                    paddingLeft: 15,
-                    fontSize: 18,
-                    fontWeight:"500",
-                    borderBottomWidth: 2,
-                    color:Constants.AppColor.backgroundColor
-                }}
+                        paddingLeft: 15,
+                        fontSize: 18,
+                        fontWeight: "500",
+                        color: Constants.AppColor.backgroundColor
+                    }}
                 >Project Status:</Text>
                 <Status/>
                 <View>
                     <Text style={{
                         paddingLeft: 15,
                         fontSize: 18,
-                        fontWeight:"500",
-                        borderBottomWidth: 2,
-                        color:Constants.AppColor.backgroundColor
+                        fontWeight: "500",
+                        color: Constants.AppColor.backgroundColor
                     }}>
                         View Projects
                     </Text>
@@ -98,13 +107,6 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         paddingBottom: 40,
     },
-    // logo:{
-    //     height:70,
-    //     width:70,
-    //     bottom:130,
-    //     borderRadius: 50,
-    //     marginLeft:280,
-    // },
     cardHome: {
         backgroundColor: Constants.AppColor.white,
         padding: 1,
@@ -159,8 +161,8 @@ const styles = StyleSheet.create({
         right: 10,
         padding: 5,
     },
-    infoDown:{
-        top:118,
+    infoDown: {
+        top: 118,
 
     },
 
