@@ -62,10 +62,13 @@ export default function App() {
             }
         }}>
             <Drawer.Screen name="HomePage" component={Home} options={{
-                title: "Home"
+                title: "Dams"
             }}/>
-            <Drawer.Screen name="Notifications" component={Login}/>
-            <Drawer.Screen name="Notification" component={Onboarding}/>
+            <Drawer.Screen name="Notifications" component={Login} options={{
+                title:"Roads"
+            }}/>
+            <Drawer.Screen name="Notification" component={Onboarding} options={{
+                title:"Affordable Housing"}}/>
         </Drawer.Navigator>;
     }
 
