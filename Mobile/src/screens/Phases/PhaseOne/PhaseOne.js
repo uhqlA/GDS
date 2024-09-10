@@ -70,22 +70,160 @@ const PhaseOne = ({ navigation, route }) => {
                                 />
                             </View>
                         </View>
+                        <View>
+                            <Text style= {styles.textVolume}>Volume (Cubic Meters)</Text>
+                            <View style={styles.inputRow}>
+                                <View style={styles.inputContainer}>
+                                    <Text style={styles.textInput}>Designed</Text>
+                                    <TextInput
+                                        style={styles.input}
+                                        placeholder="(cubic meters...)"
+                                        keyboardType="numeric"
+                                    />
+                                </View>
+                                <View style={styles.inputContainer}>
+                                    <Text style={styles.textInput}>Observed</Text>
+                                    <TextInput
+                                        style={styles.input}
+                                        placeholder="(cubic meters...)"
+                                        keyboardType="numeric"
+                                    />
+                                </View>
+                            </View>
+                        </View>
+                        <View>
+                            <Text style= {styles.textVolume}>Dam Height (Meters) </Text>
+                            <View style={styles.inputRow}>
+                                <View style={styles.inputContainer}>
+                                    <Text style={styles.textInput}>Designed</Text>
+                                    <TextInput
+                                        style={styles.input}
+                                        placeholder="( meters...)"
+                                        keyboardType="numeric"
+                                    />
+                                </View>
+                                <View style={styles.inputContainer}>
+                                    <Text style={styles.textInput}>Observed</Text>
+                                    <TextInput
+                                        style={styles.input}
+                                        placeholder="( meters...)"
+                                        keyboardType="numeric"
+                                    />
+                                </View>
+                            </View>
+                        </View>
                     </ScrollView>
                 );
             case 1:
                 return (
                     <ScrollView contentContainerStyle={styles.scrollContainer}>
-                        <Text style={styles.header}>Soil Fertility Status</Text>
-                        {['Calcium', 'Aluminum', 'Moisture Content', 'Nitrogen', 'Potassium', 'Magnesium'].map((item) => (
-                            <View key={item}>
-                                <Text style={styles.textLabel}>{item}</Text>
-                                <TextInput
-                                    style={styles.input}
-                                    keyboardType="decimal-pad"
-                                    onChangeText={(value) => handleChange(item.toLowerCase(), value)}
-                                />
+                        <View>
+                            <Text style= {styles.textVolume}>Dam Length (Dam Top Kilometers) </Text>
+                            <View style={styles.inputRow}>
+                                <View style={styles.inputContainer}>
+                                    <Text style={styles.textInput}>Designed</Text>
+                                    <TextInput
+                                        style={styles.input}
+                                        placeholder="(cubic meters...)"
+                                        keyboardType="numeric"
+                                    />
+                                </View>
+                                <View style={styles.inputContainer}>
+                                    <Text style={styles.textInput}>Observed</Text>
+                                    <TextInput
+                                        style={styles.input}
+                                        placeholder="(cubic meters...)"
+                                        keyboardType="numeric"
+                                    />
+                                </View>
                             </View>
-                        ))}
+                        </View>
+                        <Text style={styles.textSpill}>Spillway</Text>
+                        <View>
+                            <Text style= {styles.textVolume}>Longest Crest (Meters)  </Text>
+                            <View style={styles.inputRow}>
+                                <View style={styles.inputContainer}>
+                                    <Text style={styles.textInput}>Designed</Text>
+                                    <TextInput
+                                        style={styles.input}
+                                        placeholder="(In Kilometers...)"
+                                        keyboardType="numeric"
+                                    />
+                                </View>
+                                <View style={styles.inputContainer}>
+                                    <Text style={styles.textInput}>Observed</Text>
+                                    <TextInput
+                                        style={styles.input}
+                                        placeholder="(In Kilometers...)"
+                                        keyboardType="numeric"
+                                    />
+                                </View>
+                            </View>
+                        </View>
+                        <Text style={styles.textSpill}>Diversion Tunnel/Outlet</Text>
+                        <View>
+                            <Text style= {styles.textVolume}>Tunnel 1 (Meters)  </Text>
+                            <View style={styles.inputRow}>
+                                <View style={styles.inputContainer}>
+                                    <Text style={styles.textInput}>Designed</Text>
+                                    <TextInput
+                                        style={styles.input}
+                                        placeholder="(In Meters...)"
+                                        keyboardType="numeric"
+                                    />
+                                </View>
+                                <View style={styles.inputContainer}>
+                                    <Text style={styles.textInput}>Observed</Text>
+                                    <TextInput
+                                        style={styles.input}
+                                        placeholder="(In Meters...)"
+                                        keyboardType="numeric"
+                                    />
+                                </View>
+                            </View>
+                        </View>
+                        <View>
+                            <Text style= {styles.textVolume}>Tunnel 2 (Meters)  </Text>
+                            <View style={styles.inputRow}>
+                                <View style={styles.inputContainer}>
+                                    <Text style={styles.textInput}>Designed</Text>
+                                    <TextInput
+                                        style={styles.input}
+                                        placeholder="(In Meters...)"
+                                        keyboardType="numeric"
+                                    />
+                                </View>
+                                <View style={styles.inputContainer}>
+                                    <Text style={styles.textInput}>Observed</Text>
+                                    <TextInput
+                                        style={styles.input}
+                                        placeholder="(In Meters...)"
+                                        keyboardType="numeric"
+                                    />
+                                </View>
+                            </View>
+                        </View>
+                        <View>
+                            <Text style= {styles.textVolume}>Diameter (Meters)  </Text>
+                            <View style={styles.inputRow}>
+                                <View style={styles.inputContainer}>
+                                    <Text style={styles.textInput}>Designed</Text>
+                                    <TextInput
+                                        style={styles.input}
+                                        placeholder="(In Meters...)"
+                                        keyboardType="numeric"
+                                    />
+                                </View>
+                                <View style={styles.inputContainer}>
+                                    <Text style={styles.textInput}>Observed</Text>
+                                    <TextInput
+                                        style={styles.input}
+                                        placeholder="(In Meters...)"
+                                        keyboardType="numeric"
+                                    />
+                                </View>
+                            </View>
+                        </View>
                     </ScrollView>
                 );
         }
@@ -160,13 +298,12 @@ const styles = StyleSheet.create({
         width: '70%',
     },
     inputContainer: {
-        flex: 1,
         marginBottom: 15,
     },
     label: {
-        fontSize: 16,
-        fontWeight: "bold",
-        color: Constants.AppColor.backgroundColor,
+        fontSize: 18,
+        color: Constants.AppColor.black,
+        textAlign: "center",
     },
     input: {
         height: 35,
@@ -194,13 +331,12 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     textLabel: {
-        fontSize: 16,
-        color: constants.AppColor.backgroundColor,
-        fontWeight: "bold",
-        marginBottom: 1,
+        fontSize: 18,
+        color: constants.AppColor.black,
+        marginBottom:2,
     },
     textAreaSection: {
-        marginBottom: 5,
+        marginBottom: 3,
     },
     textArea: {
         height: 100,
@@ -212,6 +348,23 @@ const styles = StyleSheet.create({
         padding: 15,
         textAlignVertical: 'top',
     },
+    textVolume:{
+        textAlign: "center",
+        fontSize:18,
+        paddingTop:3,
+        paddingBottom:5,
+    },
+    textInput: {
+        fontSize:18,
+        textAlign: "center"
+    },
+    textSpill:{
+        textAlign: "center",
+        fontSize:20,
+        paddingBottom:5,
+        color:constants.AppColor.backgroundColor,
+        fontWeight: "500"
+    }
 });
 
 export default PhaseOne;
