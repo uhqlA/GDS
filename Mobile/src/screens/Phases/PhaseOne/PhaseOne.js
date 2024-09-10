@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import {SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import constants from "../../../components/constants/Constants";
 import Constants from "../../../components/constants/Constants";
 
@@ -296,28 +296,17 @@ const PhaseOne = ({ navigation, route }) => {
                             </View>
                         </View>
                         <Text style={styles.textSpill}>Other Structures</Text>
-                        <View style={styles.otherStructures}>
-                            <View style={styles.headerInfo}>
-                                <Text style={styles.labelInfo}>Initial Phase Cost:</Text>
-                                <TextInput
-                                    style={styles.inputInfor}
-                                    placeholder="Initial Phase Cost"
-                                    keyboardType="numeric"
-                                />
-                            </View>
-                        </View>
-                        <View style={styles.otherStructures}>
-                            <View style={styles.headerInfo}>
-                                <Text style={styles.labelInfo}>Initial Phase Cost:</Text>
-                                <TextInput
-                                    style={styles.inputInfor}
-                                    placeholder="Initial Phase Cost"
-                                    keyboardType="numeric"
-                                />
-                            </View>
-                        </View>
-
-
+                        <SafeAreaView>
+                            <TextInput
+                                style={styles.input}
+                            />
+                            <Text></Text>
+                            <TextInput
+                                style={styles.input}
+                                placeholder="useless placeholder"
+                                keyboardType="numeric"
+                            />
+                        </SafeAreaView>
 
                     </ScrollView>
                 );
