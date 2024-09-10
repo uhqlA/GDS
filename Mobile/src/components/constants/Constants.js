@@ -26,6 +26,7 @@ const AppColor = {
     input: "#EFEFEF",
     inputBorderColor: "#E8ECF4",
     textColor: "#483D8B",
+    otherColor: "#000080",
 
 };
 
